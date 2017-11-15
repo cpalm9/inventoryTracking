@@ -1,0 +1,1 @@
+This is an inventory tracking app made for IS531 group project
