@@ -5,5 +5,8 @@
         <h3></h3>
         <h4>Next Up: Go through the django-mako-plus tutorial and add Javascript, CSS, and urlparams to this page.</h4>
         <h4 class="utc-time">Current time in UTC: ${ utc_time }</h4>
+        %for p in products:
+            <h4>${p.location.city}</h4>
+        %endfor
     </div>
 </%block>
