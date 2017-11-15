@@ -26,7 +26,9 @@ SECRET_KEY = '#%2xow+b7t+th*==9%8mwz&t3i2)+aygi3@4t)0y&0nq3w%-h-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'inventory-tracking-dev-app.us-east-2.elasticbeanstalk.com',
+]
 
 
 # Application definition
