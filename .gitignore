@@ -5,3 +5,4 @@
 __pycache__/
 .sass-cache/
 db.sqlite3
+inventory_tracking/inventory_tracking/__pycache__/*
