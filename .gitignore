@@ -1,2 +1,7 @@
-__pycache__
-db.sqllite3
+*.log
+*.pyc
+.DS_STORE
+.cached_templates/
+__pycache__/
+.sass-cache/
+db.sqlite3
