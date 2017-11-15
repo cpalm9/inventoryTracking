@@ -8,8 +8,8 @@
 
         ## add any site-wide scripts or CSS here; for example, jquery:
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js.css"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
         ## render the static file links with the same name as this template
         <script src="/django_mako_plus/dmp-common.min.js"></script>
@@ -18,13 +18,18 @@
     </head>
     <body>
 
-        <header>
-            <h1>Welcome to the homepage app!<h1>
-        </header>
+      <%block name="navbar">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </nav>
+      </%block>
 
-        <%block name="content">
-            
-        </%block>
+      <%block name="content">
+
+      </%block>
 
     </body>
 </html>
