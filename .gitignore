@@ -7,3 +7,5 @@ __pycache__/
 db.sqlite3
 inventory_tracking/inventory_tracking/__pycache__/*
 .vscode/
+inventory_tracking/homepage/migrations/*
+inventory_tracking/inventory_tracking/settings.py
