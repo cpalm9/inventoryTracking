@@ -7,7 +7,7 @@ import string
 
 class Location(models.Model):
     #id
-    city2 = models.TextField(blank=True, null=True)
+    city = models.TextField(blank=True, null=True)
     state = models.TextField(blank=True, null=True)
     country = models.TextField(blank=True, null=True)
     zipcode = models.IntegerField(default=11111)
