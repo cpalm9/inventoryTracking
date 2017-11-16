@@ -2,12 +2,33 @@
 
 <%block name="content">
     <div class="jumbotron">
-        <h1 class="display-3">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h1 class="display-3">Inventory Tracking System</h1>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
+      </div>
+      <div class="container">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Description</th>
+              <th scope="col">Manufacturer</th>
+              <th scope="col">Notes</th>
+              <th scope="col">Part Number</th>
+              <th scope="col">Date Created</th>
+            </tr>
+          </thead>
+          %for p in products:
+            <tbody>
+              <tr>
+                <th scope="row">${ p.org_tag }</th>
+                <td>${ p.description }</td>
+                <td>${ p.manufacturer }</td>
+                <td>${ p.man_notes }</td>
+                <td>${ p.man_part_number }</td>
+                <td>${ p.date }</td>
+              </tr>
+            </tbody>
+          %endfor
+        </table>
       </div>
 </%block>
