@@ -8,40 +8,13 @@
         <!-- /.col-lg-12 -->
       </div>
       <!-- /.row -->
-      <div class="container-fluid">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Description</th>
-              <th scope="col">Manufacturer</th>
-              <th scope="col">Notes</th>
-              <th scope="col">Part Number</th>
-              <th scope="col">Date Created</th>
-            </tr>
-          </thead>
-          %for p in products:
-            <tbody>
-              <tr>
-                <th scope="row">${ p.org_tag }</th>
-                <td>${ p.description }</td>
-                <td>${ p.manufacturer }</td>
-                <td>${ p.man_notes }</td>
-                <td>${ p.man_part_number }</td>
-                <td>${ p.date }</td>
-              </tr>
-            </tbody>
-          %endfor
-        </table>
-      </div>
-   
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
+                          <i class="fa fa-shopping-cart fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">${ products.count() }</div>
@@ -71,9 +44,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/view_products/">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">View Products</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
