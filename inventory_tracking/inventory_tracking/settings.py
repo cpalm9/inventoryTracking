@@ -111,7 +111,7 @@ TEMPLATES = [
             #     # compiles app/styles/template.less to app/styles/template/css
             #     { 'provider': 'django_mako_plus.CompileLessProvider' },
             # ],
-           
+
             # see the DMP online tutorial for information about this setting
             # it can normally be empty
             'TEMPLATES_DIRS': [
@@ -222,5 +222,3 @@ LOGGING = {
         },
     },
 }
-
-

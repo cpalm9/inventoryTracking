@@ -1,17 +1,12 @@
 <%inherit file="base.htm" />
 
 <%block name="content">
-<<<<<<< HEAD
     <div class="content">
-        <h3></h3>
-        <h4>Next Up: Go through the django-mako-plus tutorial and add Javascript, CSS, and urlparams to this page.</h4>
-        <h4 class="utc-time">Current time in UTC: ${ utc_time }</h4>
         %for p in products:
-            <h4>${p.location.city}</h4>
+            <h4>${p.org_tag}</h4>
         %endfor
     </div>
-</%block>
-=======
+
     <div class="jumbotron">
         <h1 class="display-3">Hello, world!</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -22,4 +17,3 @@
         </p>
       </div>
 </%block>
->>>>>>> 469813af78013ec6aee93272503fdce36706c9b3
