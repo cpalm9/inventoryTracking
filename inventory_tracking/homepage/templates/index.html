@@ -1,10 +1,6 @@
 <%inherit file="base.htm" />
 
 <%block name="content">
-    <div class="jumbotron">
-        <h1 class="display-3">Inventory Tracking System</h1>
-        <hr class="my-4">
-      </div>
       <div class="container">
         <table class="table">
           <thead class="thead-dark">
@@ -30,5 +26,6 @@
             </tbody>
           %endfor
         </table>
+        <a href="/create/" class="btn btn-primary" role="button">Create New Product</a>
       </div>
 </%block>
