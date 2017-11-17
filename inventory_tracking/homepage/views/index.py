@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 @view_function
 def process_request(request):
     utc_time = datetime.utcnow()
-    products = prod.Product.objects.all()
+    products = prod.Product.objects.all().order_by('-date')
     context = {
         # sent to index.html:
         'utc_time': utc_time,
