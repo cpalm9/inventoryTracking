@@ -21,12 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#%2xow+b7t+th*==9%8mwz&t3i2)+aygi3@4t)0y&0nq3w%-h-'
-
+SECRET_KEY='FALSE'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'inventory-tracking-dev-app.us-east-2.elasticbeanstalk.com',
+    'localhost',
+]
 
 
 # Application definition
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mako_plus',
-    'homepage'
+    'homepage',
+    'formlib'
 ]
 
 MIDDLEWARE = [
@@ -141,15 +144,25 @@ WSGI_APPLICATION = 'inventory_tracking.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+''' DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'postgres',
+       'USER': 'postgres',
+       'PASSWORD': 'postgres',
+       'HOST': '127.0.0.1',
+       'PORT': '5432',
+   }
+} '''
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'InvTracking',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+ 'default': {
+ 	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ 	'NAME': 'ebdb',
+ 	'USER': 'ebroot',
+ 	'PASSWORD': 'project3rocksmysocks',
+ 	'HOST': 'aasvk8m6g73q8z.coea44hjejh2.us-east-2.rds.amazonaws.com',
+ 	'PORT': '5432',
+ }
 }
 
 
