@@ -24,7 +24,7 @@ def process_request(request):
 
 class CreateForm(FormMixIn, forms.Form):
     def init(self):
-        self.fields['manufacturer'] = forms.CharField(label='Product Name', max_length=100)
+        self.fields['manufacturer'] = forms.CharField(label='Manufacturer', max_length=100)
         self.fields['man_part_number'] = forms.IntegerField(label='Part Number')
         self.fields['description'] = forms.CharField(label='Description' )
         self.fields['man_notes'] = forms.CharField(label='Special Notes' )
