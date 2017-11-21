@@ -7,7 +7,6 @@ from django import forms
 from formlib.form import FormMixIn
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
-from homepage import models as hmod
 
 @view_function
 def process_request(request):
@@ -31,9 +30,9 @@ def process_request(request):
             self.fields['password'] = forms.CharField(label="PASSWORD", required=True, widget=forms.PasswordInput)
 
         def clean(self):
-            tempUser = hmod.User.objects.get(username="manager")
+            tempUser = prod.User.objects.get(username="manager")
             if tempuser is None:
-                newUser = hmod.User()
+                newUser = prod.User()
                 newUser.username = "manager"
                 newUser.set_password("Password1")
                 newUser.save()
