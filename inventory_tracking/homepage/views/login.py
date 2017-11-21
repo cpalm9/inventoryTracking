@@ -14,15 +14,15 @@ def process_request(request):
 
     form = LoginForm(request)
 
-        if form.is_valid():
+    if form.is_valid():
 
-            form.commit(request)
+        form.commit(request)
 
-            return HttpResponseRedirect('/homepage/index/')
+        return HttpResponseRedirect('/homepage/index/')
 
-        return dmp_render(request, 'login.html', {
-            'form': form,
-        })
+    return dmp_render(request, 'login.html', {
+        'form': form,
+    })
 
     class LoginForm(FormMixIn, forms.Form):
         form_submit = 'LOGIN'
