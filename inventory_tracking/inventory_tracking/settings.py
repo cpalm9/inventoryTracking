@@ -28,8 +28,10 @@ DEBUG = True
 ALLOWED_HOSTS = [
 	'inventory-tracking-dev-app.us-east-2.elasticbeanstalk.com',
     'localhost',
+	'127.0.0.1',
 ]
 
+AUTH_USER_MODEL = 'homepage.User'
 
 # Application definition
 
@@ -114,7 +116,7 @@ TEMPLATES = [
             #     # compiles app/styles/template.less to app/styles/template/css
             #     { 'provider': 'django_mako_plus.CompileLessProvider' },
             # ],
-           
+
             # see the DMP online tutorial for information about this setting
             # it can normally be empty
             'TEMPLATES_DIRS': [
@@ -235,5 +237,3 @@ LOGGING = {
         },
     },
 }
-
-

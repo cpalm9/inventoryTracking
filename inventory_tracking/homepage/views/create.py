@@ -8,6 +8,7 @@ from formlib.form import FormMixIn
 from django.http import HttpResponse, HttpResponseRedirect
 
 @view_function
+@login_required(login_url='/homepage/welcome/')
 def process_request(request):
     # process the form
     form = CreateForm(request)

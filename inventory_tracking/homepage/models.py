@@ -2,6 +2,7 @@ from django.db import models
 from polymorphic.models import PolymorphicModel
 import random
 import string
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -21,3 +22,7 @@ class Product(PolymorphicModel):
     description = models.TextField(blank=True, null=True)
     date = models.DateField(auto_now_add=True)
     man_notes = models.TextField(blank=True, null=True)
+
+class User(AbstractUser):
+
+    zipcode = models.TextField()

@@ -7,6 +7,7 @@ from formlib.form import FormMixIn
 from django.http import HttpResponse, HttpResponseRedirect
 
 @view_function
+@login_required(login_url='/homepage/welcome/')
 def process_request(request):
     utc_time = datetime.utcnow()
     products = prod.Product.objects.all().order_by('-date')
