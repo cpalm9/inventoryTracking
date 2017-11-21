@@ -23,25 +23,25 @@ def process_request(request):
         'form': form,
     })
 
-    class LoginForm(FormMixIn, forms.Form):
-        form_submit = 'LOGIN'
-        def init(self):
-            self.fields['username'] = forms.CharField(label="USERNAME", required=True, max_length=100)
-            self.fields['password'] = forms.CharField(label="PASSWORD", required=True, widget=forms.PasswordInput)
+class LoginForm(FormMixIn, forms.Form):
+    form_submit = 'LOGIN'
+    def init(self):
+        self.fields['username'] = forms.CharField(label="USERNAME", required=True, max_length=100)
+        self.fields['password'] = forms.CharField(label="PASSWORD", required=True, widget=forms.PasswordInput)
 
-        def clean(self):
-            tempUser = prod.User.objects.get(username="manager")
-            if tempuser is None:
-                newUser = prod.User()
-                newUser.username = "manager"
-                newUser.set_password("Password1")
-                newUser.save()
-            self.user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
-            if self.user is None:
-                #way of saying whether or not you're happy with the form. Sets Is_Valid to false
-                raise forms.ValidationError('Invalid username or password.')
-            return self.user
+    def clean(self):
+        tempUser = prod.User.objects.get(username="manager")
+        if tempuser is None:
+            newUser = prod.User()
+            newUser.username = "manager"
+            newUser.set_password("Password1")
+            newUser.save()
+        self.user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
+        if self.user is None:
+            #way of saying whether or not you're happy with the form. Sets Is_Valid to false
+            raise forms.ValidationError('Invalid username or password.')
+        return self.user
 
-        def commit(self, request):
-            #login
-            login(self.request, self.user)
+    def commit(self, request):
+        #login
+        login(self.request, self.user)
