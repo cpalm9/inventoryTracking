@@ -6,6 +6,7 @@ from homepage import models as prod
 from django import forms
 from formlib.form import FormMixIn
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 @view_function
 @login_required(login_url='/homepage/welcome/')
