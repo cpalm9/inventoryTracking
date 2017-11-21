@@ -103,7 +103,7 @@
         <div class="col-lg-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Sales by Quarter
                     <div class="pull-right">
                         <div class="btn-group">
                             <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -115,21 +115,21 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div id="morris-area-chart"></div>
+                    <div id="chris-chart"></div>
                 </div>
                 <!-- /.panel-body -->
             </div>
             <!-- /.panel -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Sales by Series
 
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row">
                         <!-- /.col-lg-4 (nested) -->
-                            <div id="morris-bar-chart"></div>
+                            <div id="chris-bar"></div>
                         <!-- /.col-lg-8 (nested) -->
                     </div>
                     <!-- /.row -->
@@ -167,14 +167,115 @@
             <!-- /.panel -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Sales by Type of Sale
                 </div>
                 <div class="panel-body">
-                    <div id="morris-donut-chart"></div>
+                    <div id="chris-donut"></div>
                     <a href="#" class="btn btn-default btn-block">View Details</a>
                 </div>
                 <!-- /.panel-body -->
             </div>
     </div>
     <!-- /.row -->
+    <script>
+        new Morris.Area({
+            // ID of the element in which to draw the chart.
+            element: 'chris-chart',
+            // Chart data records -- each entry in this array corresponds to a point on
+            // the chart.
+            data: [{
+                    period: '2015 Q1',
+                    Product1: 2666,
+                    Product2: null,
+                    Product3: 2647
+                }, {
+                    period: '2015 Q2',
+                    Product1: 2778,
+                    Product2: 2294,
+                    Product3: 2441
+                }, {
+                    period: '2015 Q3',
+                    Product1: 4912,
+                    Product2: 1969,
+                    Product3: 2501
+                }, {
+                    period: '2015 Q4',
+                    Product1: 3767,
+                    Product2: 3597,
+                    Product3: 5689
+                }, {
+                    period: '2016 Q1',
+                    Product1: 6810,
+                    Product2: 1914,
+                    Product3: 2293
+                }, {
+                    period: '2016 Q2',
+                    Product1: 5670,
+                    Product2: 4293,
+                    Product3: 1881
+                }, {
+                    period: '2016 Q3',
+                    Product1: 4820,
+                    Product2: 3795,
+                    Product3: 1588
+                }, {
+                    period: '2016 Q4',
+                    Product1: 15073,
+                    Product2: 5967,
+                    Product3: 5175
+                }, {
+                    period: '2017 Q1',
+                    Product1: 10687,
+                    Product2: 4460,
+                    Product3: 2028
+                }, {
+                    period: '2017 Q2',
+                    Product1: 8432,
+                    Product2: 5713,
+                    Product3: 1791
+                }, {
+                    period: '2017 Q3',
+                    Product1: 9432,
+                    Product2: 6713,
+                    Product3: 791
+                }],
+                xkey: 'period',
+                ykeys: ['Product1', 'Product2', 'Product3'],
+                labels: ['Product 1', 'Product 2', 'Product 3'],
+                pointSize: 2,
+                hideHover: 'auto',
+                resize: true
+        });
+        new Morris.Donut({
+            element: 'chris-donut',
+            data: [{
+                label: "Download Sales",
+                value: 12
+            }, {
+                label: "In-Store Sales",
+                value: 30
+            }, {
+                label: "Mail-Order Sales",
+                value: 20
+            }],
+            resize: true
+        });
+        new Morris.Bar({
+            element: 'chris-bar',
+            data: [{
+                y: '2016',
+                a: 75,
+                b: 65
+            }, {
+                y: '2017',
+                a: 100,
+                b: 90
+            }],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B'],
+            hideHover: 'auto',
+            resize: true
+        });
+    </script>
 </%block>
