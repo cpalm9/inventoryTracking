@@ -35,6 +35,7 @@ class LoginForm(FormMixIn, forms.Form):
             newUser = prod.User()
             newUser.username = "manager"
             newUser.set_password("Password1")
+            newUser.zipcode = '12345'
             newUser.save()
         self.user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
         if self.user is None:
